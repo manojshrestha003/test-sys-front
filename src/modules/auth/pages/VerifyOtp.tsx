@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState , useRef, useEffect} from "react";
 import { toast } from "sonner";
 import { ArrowLeft, ShieldCheck, RefreshCw } from "lucide-react";
 import { useLocation } from "react-router-dom";
@@ -21,14 +21,14 @@ export function VerifyOTP({
 }: VerifyOTPProps) {
   const location = useLocation();
   const locationEmail = (location.state as { email?: string } | null)?.email;
-  const [otp, setOtp] = React.useState<string[]>(new Array(length).fill(""));
-  const [timer, setTimer] = React.useState(30);
+  const [otp, setOtp] = useState<string[]>(new Array(length).fill(""));
+  const [timer, setTimer] = useState(30);
   const [verifyEmail, { isLoading: isSubmitting }] = useVerifyEmailMutation();
-  const inputRefs = React.useRef<(HTMLInputElement | null)[]>([]);
+  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
   const verificationEmail = locationEmail ?? email;
 
   // Countdown timer for code resend
-  React.useEffect(() => {
+  useEffect(() => {
     if (timer <= 0) return;
     const interval = setInterval(() => {
       setTimer((prev) => prev - 1);

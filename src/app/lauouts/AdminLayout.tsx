@@ -27,7 +27,7 @@ interface DashboardMenuItem {
 
 const dashboardMenuItems: DashboardMenuItem[] = [
   { label: "Overview", path: routes.DASHBOARD, icon: Home },
-  { label: "Users", path: "/users", icon: Users },
+  { label: "User Management", path: "/user-management", icon: Users },
   { label: "Settings", path: "/settings", icon: Settings },
 ];
 
@@ -63,10 +63,10 @@ export function AdminLayout({ children }: DashboardLayoutProps) {
         </div>
 
         {/* Search Bar */}
-       {/* Global Search Component Wrapper */}
-<div className="hidden sm:block w-full max-w-sm">
-  <GlobalSearch />
-</div>
+              {/* Global Search Component Wrapper */}
+        <div className="hidden sm:block w-full max-w-sm">
+          <GlobalSearch />
+        </div>
 
         {/* Right Actions */}
         <div className="flex items-center gap-2">
@@ -86,8 +86,8 @@ export function AdminLayout({ children }: DashboardLayoutProps) {
               {avatarInitials}
             </div>
             <div className="hidden lg:block text-left">
-              <p className="text-xs font-semibold text-slate-900">{cookies?.user_name}</p>
-              <p className="text-[10px] text-slate-500">{cookies?.user_email}</p>
+              <p className="text-xs font-semibold text-slate-900">{cookies?.user_name || "User"}</p>
+              <p className="text-[10px] text-slate-500">{cookies?.user_email || ""}</p>
             </div>
           </div>
         </div>

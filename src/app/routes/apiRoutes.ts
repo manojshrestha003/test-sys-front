@@ -1,5 +1,6 @@
 export const apiRoutes = {
     registerUser: "/auth/create-user",
     verifyOtp: "/auth/verify-email",
-    login: "/auth/login"
+    login: "/auth/login",
+    getAllUsers: "/auth/users"
 }

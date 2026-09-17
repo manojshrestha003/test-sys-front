@@ -1,5 +1,5 @@
 import { Users, FileText, HelpCircle, GraduationCap, Plus } from "lucide-react";
-import { AdminLayout } from "@/app/lauouts/AdminLayout";
+import { AdminLayout } from "@/app/layouts/AdminLayout";
 import { Card } from "@/common/components/ui/Card";
 import { Button } from "@/common/components/ui/Button";
 

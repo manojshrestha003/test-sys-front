@@ -6,6 +6,8 @@ import { VerifyOTP } from "@/modules/auth/pages/VerifyOtp";
 import { DashboardPage } from "@/modules/Admin/Dashboard/Pages";
 import UserManagementPage from "@/modules/Admin/UserManagement/Pages";
 import SettingsPage from "@/modules/Admin/Settings/pages";
+import QuestionManagement from "@/modules/Admin/QuestionManagement/pages";
+import CategoryPage from "@/modules/Admin/CategoryManagement/pages";
 
 const AppRouter = () =>{
     return (
@@ -17,6 +19,8 @@ const AppRouter = () =>{
         <Route path={routes.DASHBOARD} element ={<DashboardPage/>}/>
         <Route path = {routes.USER_MANAGEMENT} element = {<UserManagementPage/>}/>
         <Route path={routes.SETTINGS} element ={<SettingsPage/>}/>
+        <Route path={routes.CATEGORY_MANAGEMENT}  element = {<CategoryPage/>}/>
+        <Route path={routes.QUESTION_MANAGEMENT} element ={<QuestionManagement/>}/>
     </Routes>
     </BrowserRouter>
     )

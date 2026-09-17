@@ -59,7 +59,7 @@ useEffect(() => {
   };
 
   return (
-    <div className={`flex flex-col gap-1.5 w-full max-w-xs ${className}`} ref={containerRef}>
+    <div className={`flex flex-col gap-1.5 w-full ${className}`} ref={containerRef}>
       {/* Label */}
       {label && (
         <label className="text-sm font-medium text-slate-800">

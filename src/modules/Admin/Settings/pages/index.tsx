@@ -1,5 +1,5 @@
 
-import { AdminLayout } from '@/app/lauouts/AdminLayout';
+import { AdminLayout } from '@/app/layouts/AdminLayout';
 import { Checkbox } from '@/common/components/ui/Checkbox';
 import { useState } from 'react';
 import { Dropdown } from '@/common/components/ui/Dropdown';

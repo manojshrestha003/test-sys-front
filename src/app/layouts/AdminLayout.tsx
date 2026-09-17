@@ -8,6 +8,8 @@ import {
   Bell, 
   LogOut, 
   Shield,
+  CircleQuestionMark,
+  Tags,
   type LucideIcon,
 } from "lucide-react";
 import { useCookies } from "react-cookie";
@@ -27,8 +29,10 @@ interface DashboardMenuItem {
 
 const dashboardMenuItems: DashboardMenuItem[] = [
   { label: "Overview", path: routes.DASHBOARD, icon: Home },
-  { label: "User Management", path: "/user-management", icon: Users },
-  { label: "Settings", path: "/settings", icon: Settings },
+  { label: "User Management", path: routes.USER_MANAGEMENT, icon: Users },
+   { label: "Category Management", path: routes.CATEGORY_MANAGEMENT, icon: Tags },
+  { label: "Questions Management", path: routes.QUESTION_MANAGEMENT, icon: CircleQuestionMark },
+  { label: "Settings", path: routes.SETTINGS, icon: Settings },
 ];
 
 export function AdminLayout({ children }: DashboardLayoutProps) {

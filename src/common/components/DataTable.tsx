@@ -109,8 +109,8 @@ export function DataTable<TData extends Record<string, unknown>>({
         </div>
       </div>
 
-      <div className="rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-        <div className="overflow-x-auto">
+      <div className="rounded-xl border border-slate-200 bg-white shadow-sm overflow-visible">
+        <div className="overflow-x-visible overflow-y-hidden">
           <table className="w-full text-left text-sm">
             <thead className="bg-slate-50 border-b border-slate-200 text-xs font-semibold text-slate-500 uppercase tracking-wider">
               <tr>

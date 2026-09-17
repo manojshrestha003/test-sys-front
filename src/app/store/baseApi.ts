@@ -5,6 +5,7 @@ import type {
   FetchBaseQueryError,
 } from "@reduxjs/toolkit/query"
 import { toast } from "sonner"
+import { Cookies } from "react-cookie"
 
 type ToastQueryArgs = string | (FetchArgs & {
   showToast?: boolean
@@ -12,8 +13,31 @@ type ToastQueryArgs = string | (FetchArgs & {
   errorMessage?: string
 })
 
+const getAuthToken = (): string | undefined => {
+  try {
+    const cookies = new Cookies()
+    const token = cookies.get("auth_token")
+    if (token) return token
+  } catch {
+    // fallback to document.cookie
+  }
+
+  if (typeof document !== "undefined") {
+    const match = document.cookie.match(/(?:^|;\s*)auth_token=([^;]*)/)
+    if (match) return decodeURIComponent(match[1])
+  }
+  return undefined
+}
+
 const rawBaseQuery = fetchBaseQuery({
   baseUrl: import.meta.env.VITE_API_BASE_URL,
+  prepareHeaders: (headers) => {
+    const token = getAuthToken()
+    if (token) {
+      headers.set("Authorization", `Bearer ${token}`)
+    }
+    return headers
+  },
 })
 
 const getErrorMessage = (error: FetchBaseQueryError) => {
@@ -71,6 +95,6 @@ const baseQuery: BaseQueryFn<
 export const baseApi = createApi({
   reducerPath: "api",
   baseQuery,
-  tagTypes: ["Auth"],
+  tagTypes: ["Auth","QuestionSet", "Categories"],
   endpoints: () => ({}),
 })

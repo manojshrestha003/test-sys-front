@@ -4,5 +4,7 @@ export const  routes = {
     VERIFY_OTP: "/auth/vefify-otp",
     DASHBOARD: "/dashboard",
     USER_MANAGEMENT: "/user-management",
-    SETTINGS: "/settings"
+    QUESTION_MANAGEMENT: "/question-management",
+    SETTINGS: "/settings",
+    CATEGORY_MANAGEMENT: "/category-management"
 }

@@ -1,5 +1,5 @@
 import { ArrowUpDown, MoreVertical } from "lucide-react";
-import { AdminLayout } from "@/app/lauouts/AdminLayout";
+import { AdminLayout } from "@/app/layouts/AdminLayout";
 import { DataTable } from "@/common/components/DataTable";
 import { OverlayLoader } from "@/common/components/OverlayLoader";
 import { useGetUsersQuery, type User } from "../api/userApi";
